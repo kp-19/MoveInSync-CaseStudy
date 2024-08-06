@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride-Share App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+</head>
+<body>
+    <header>
+        <h1>Ride-Share</h1>
+        <button class="login-button" onclick="openLoginModal()">Login</button>
+    </header>
+    <main class="container">
+        <div class="button-container">
+            <button onclick="navigateTo('new_trip.html')">
+                <span class="button-content">
+                    <span class="icon">🛣️</span>
+                    <span class="text">New Trip</span>
+                </span>
+            </button>
+            <button onclick="navigateTo('track_ride.html')">
+                <span class="button-content">
+                    <span class="icon">📍</span>
+                    <span class="text">Track Shared Ride</span>
+                </span>
+            </button>
+            <button onclick="navigateTo('admin_functions.html')">
+                <span class="button-content">
+                    <span class="icon">🔧</span>
+                    <span class="text">Admin Functions</span>
+                </span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <div class="login-buttons">
+                <button onclick="openTravelerCompanionLogin()">As Traveler/Companion</button>
+                <button onclick="openAdminLogin()">As Admin</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Traveler/Companion Login Form -->
+    <div id="travelerCompanionLogin" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTravelerCompanionLogin()">&times;</span>
+            <h2>Traveler/Companion Login</h2>
+            <form>
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" name="userId" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Login Form -->
+    <div id="adminLogin" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAdminLogin()">&times;</span>
+            <h2>Admin Login</h2>
+            <form>
+                <label for="adminId">Admin ID:</label>
+                <input type="text" id="adminId" name="adminId" required>
+                <label for="adminPassword">Password:</label>
+                <input type="password" id="adminPassword" name="adminPassword" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
